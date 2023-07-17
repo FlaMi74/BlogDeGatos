@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --hue: 250;
+
+    --fc-header: #fff;
+    --fc-title: #202024;
+    --fc-main-text: #121214;
+
+    --bc-header: #065E7C;
+    --bc-header-input: #417283;
+
+    --BrandColorsDark: #065E7C;
+
+}
+
+body, html, input {
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    margin: 0 auto;
+    width: 43rem;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    width: 43rem;
+    height: 7.2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bc-header);
+    gap: 2.4rem;
+    padding: 0 1.4rem 1.4rem;
+}
+
+header #petPaw  {
+    width: 2.4rem;
+    height: 2rem;
+    padding: 8px;
+}
+
+header #petPaw, .avatar img {
+    width: 4rem;
+    height: 4rem;
+    background-color: #F4FCFF;
+
+    border-radius: 99.9rem;
+    object-fit: cover;
+}
+
+.input-wrapper label { 
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.input-wrapper input {
+    display: flex;
+    width: 22rem;
+    height: 1.6rem;
+    padding: 1.2rem 1.6rem 1.2rem 1.4rem;
+    align-items: center;
+    gap: 1.2rem;
+    border-radius: 2px;
+    background: var(--bc-header-input);
+    color: var(--fc-header);
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav #title {
+    width: 43rem;
+    gap: 8px;
+    margin-bottom: 3.2rem ;
+}
+
+.nav #title #sunriseCat {
+    width: 42.98rem;
+    height: 21.9rem; 
+    object-fit: cover ;
+    border-radius: 5px;
+    margin-bottom: 3.2rem;
+    overflow: hidden;
+}
+
+.nav #title h2, 
+.nav .articles,
+.nav #title .icons,
+.nav #title #cats {
+    padding: 0 0 0 2.2rem;
+}
+
+.nav #title h2, .articles h2 {
+    color: var(--fc-title);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 3.8rem;
+}
+
+.nav #title .icons button {
+    display: inline;
+    padding: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    background-color: transparent;
+    border: none;
+    background: var(--BrandColorsDark);
+    border-radius: 99.9rem;
+    margin-bottom: 3.2rem;
+}
+
+.nav #title .icons img {
+    width: 1.6rem;
+    height: 1.6rem;
+    cursor: pointer;
+}
+
+#cats {
+    width: 39rem;
+}
+
+#cats p {
+    color: var(--fc-main-text);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4rem;
+}
+
+.nav .articles {
+    display: flex;
+    flex-direction: column;
+    width: 38.4rem;
+    gap: 1.6rem;
+    margin-bottom: 3.2rem;
+}
+
+.nav .articles h2 {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.8rem;
+}
+
+.nav .articles .items {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem; 
+}
+
+.nav .articles .items img {
+    width: 15.1rem;
+    height: 8.4rem; 
+    animation: appear .6s var(--delay) backwards;
+}
+
+.articles .items img:hover, #title .icons img:hover {
+    filter: hue-rotate(9deg) contrast(101%) saturate(200%);
+    transform: scale(1.1) rotate(-2deg);
+}
+
+.articles .items h3 {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.4rem;
+    color: var(--fc-title);
+}
+
+.articles .items p {
+    color: var(--fc-main-text);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.2rem; 
+}
+
+footer  {
+    display: flex;
+    width: 43rem;
+    height: 6.4rem;
+    padding: 1.6rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    background-color: var(--BrandColorsDark);
+    margin-top: 2rem;
+}
+
+.container p {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--fc-header);
+}
+
+header {
+    --startY: -100%;
+    animation: move .2s;
+}
+
+footer {
+    --startY: 100%;
+    animation: move .2s;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(.7);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@media (min-width: 1000px) {
+    
+body {
+    width: 144.5rem;
+    height: 109rem;
+    margin: 0 auto;
+}
+
+main {
+    width: 100%;
+}
+
+header {
+    width: 144.5rem;
+    height: 7.2rem;
+    justify-content: space-between;
+    padding: 1.2rem 2.4rem;
+    gap: 4rem;
+}
+
+header #petPaw  {
+    width: 2.4rem;
+    height: 2rem;
+}
+
+header #petPaw, .avatar img {
+    width: 4rem;
+    height: 4rem;
+}
+
+.input-wrapper input {
+    width: 100rem;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3.4rem;
+    margin: 4rem 10rem 0;   
+}
+
+.nav #title {
+    display: inline;
+    width: 80rem;
+}
+
+.nav #title #sunriseCat {
+    width: 80rem;
+    height: 40rem; 
+}
+
+.nav #title h2 {
+    padding: 0;
+    position: absolute;
+}
+
+#title .icons {
+    display: flex;
+    gap:  1.6rem;
+    justify-content: right;
+    position: relative;
+    z-index: 1;
+}
+
+.nav #title #cats {
+    width: 80rem;
+    height: 40rem;
+    padding: 0;
+}
+
+#cats p {
+    color: var(--fc-main-text);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+}
+footer {
+    display: flex;
+    width: 144rem;
+}
+}
+
+
+
+
+
+
+
